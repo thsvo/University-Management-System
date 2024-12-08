@@ -62,5 +62,5 @@ Any additional information goes here
 
 ## Authors
 
-- [@octokatherine](https://github.com/thsvo)
+- [@thsvo](https://github.com/thsvo)
 
