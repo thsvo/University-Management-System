@@ -12,7 +12,7 @@ const createBook = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        res.json({
+        res.status(404).json({
             success: false,
             massage: 'validation error',
             error,
@@ -24,13 +24,13 @@ const totalrevenuecalculate = async (req: Request, res: Response) => {
     try {
         const result = await bookService.totalCalRevenue()
 
-        res.status(200).json({
+        res.send({
             message: 'Revenue calculated successfully',
             status: true,
             data: { totalRevenue: result },
         })
     } catch (error) {
-        res.status(500).json({
+        res.status(404).json({
             message: 'Error calculating revenue',
             status: false,
             error,

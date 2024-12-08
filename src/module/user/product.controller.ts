@@ -12,7 +12,7 @@ const createProduct = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        res.json({
+        res.status(404).json({
             success: false,
             massage: 'validation error',
             error,
@@ -41,7 +41,7 @@ const getProduct = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        res.send({
+        res.status(404).json({
             success: false,
             message: 'Error fetching user',
             error,
@@ -60,7 +60,7 @@ const getSingle = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        res.send({
+        res.status(404).json({
             success: false,
             message: 'Error fetching user',
             error,
@@ -79,7 +79,7 @@ const UpdateBook = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        res.json({
+        res.status(404).json({
             success: false,
             message: 'Error updating user',
             error,
@@ -97,7 +97,7 @@ const deleteBook = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        res.json({
+        res.status(404).json({
             success: false,
             message: 'Error deleting user',
             error,
