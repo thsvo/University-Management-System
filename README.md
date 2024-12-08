@@ -55,9 +55,6 @@ To deploy this project run
 ```
 
 
-## Appendix
-
-Any additional information goes here
 
 
 ## Authors
