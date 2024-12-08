@@ -1,10 +1,10 @@
 
-# Project Title
+# Book Shop Management
 
-A brief description of what this project does and who it's for
+Express application with TypeScript, integrating MongoDB with Mongoose to manage a Book Store. Ensure data integrity using Mongoose schema validation.
 
 
-## Project Installation
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
