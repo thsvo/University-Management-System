@@ -1,15 +1,15 @@
-import express, { Request, Response } from 'express'
-import productRouter from './module/user/product.router'
-import bookRouter from './module/book/book.route'
+import express, { Application, Request, Response } from 'express'
+import { StudentRoutes } from './modules/student/student.route'
+import cors from 'cors'
+import { userRouter } from './modules/user/user.router'
 
-const app = express()
+const app: Application = express()
 
 app.use(express.json())
+app.use(cors())
 
-app.use('/api', productRouter)
-app.use('/api', bookRouter)
-
-
+app.use('/api/v1/students', StudentRoutes)
+app.use('/api/v1/users', userRouter)
 app.get('/', (req: Request, res: Response) => {
     res.send({
         message: 'Welcome to my API!',
