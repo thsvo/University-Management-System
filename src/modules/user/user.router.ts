@@ -1,17 +1,14 @@
-import express, { NextFunction, Request, Response } from 'express'
+import express from 'express'
 import { UserControllers } from './users.controller'
+import { createStudentValidationSchema } from '../student/student.validation'
+import validateRequest from '../../middlewares/validateRequest'
 
 const router = express.Router()
 
-const shenaBahini = (name) => {
-    return async (req: Request, res: Response, next: NextFunction) => {
-        console.log(`im here ${name}`)
-
-        //validation logic here
-        next()
-    }
-}
-
-router.post('/create-student', shenaBahini('data here'), UserControllers.createStudent)
+router.post(
+    '/create-student',
+    validateRequest(createStudentValidationSchema),
+    UserControllers.createStudent
+)
 
 export const userRouter = router
